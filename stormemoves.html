@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Storme Moves — Premium Art & Furniture Relocation, Brisbane</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --navy:#152244;--navy-mid:#1C2E58;--gold:#B8922E;--gold-pale:#D4B06A;
+  --white:#FFFFFF;--off:#F7F6F3;--off2:#EFEDE8;
+  --ink:#1A1816;--ink2:#5C5956;--ink3:#9A9794;--border:#E4E1DC;
+  --serif:'Cormorant Garamond',serif;--sans:'Inter',sans-serif;
+}
+html{scroll-behavior:smooth}
+body{background:var(--white);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.65;overflow-x:hidden}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:22px 60px;display:flex;justify-content:space-between;align-items:center;transition:all 0.4s}
+nav.scrolled{background:var(--navy);padding:14px 60px}
+.nav-logo{text-decoration:none;display:flex;align-items:center;gap:13px}
+.nav-logo img{width:44px;height:44px;object-fit:contain;filter:brightness(0) invert(1)}
+.logo-text{display:flex;flex-direction:column;line-height:1}
+.logo-name{font-family:var(--serif);font-size:21px;font-weight:600;color:#fff;letter-spacing:0.03em}
+.logo-sub{font-size:8px;font-weight:400;letter-spacing:0.22em;text-transform:uppercase;color:rgba(255,255,255,0.42);margin-top:4px}
+.nav-links{display:flex;gap:36px;list-style:none}
+.nav-links a{font-size:12px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.6);text-decoration:none;transition:color 0.2s}
+.nav-links a:hover{color:#fff}
+.nav-cta{font-size:11px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;border:1.5px solid rgba(255,255,255,0.45);color:#fff;padding:11px 26px;text-decoration:none;position:relative;overflow:hidden;transition:background 0.2s}
+.nav-cta:hover{background:rgba(255,255,255,0.1)}
+
+/* HERO */
+.hero{position:relative;height:100vh;min-height:660px;display:flex;align-items:flex-end;overflow:hidden}
+.hero-img{position:absolute;inset:0}
+.hero-img img{width:100%;height:100%;object-fit:cover;object-position:center 30%;will-change:transform}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(21,34,68,0.90) 0%,rgba(21,34,68,0.30) 60%,rgba(21,34,68,0.10) 100%)}
+.hero-content{position:relative;z-index:2;width:100%;padding:0 60px 90px;display:grid;grid-template-columns:1fr auto;align-items:flex-end;gap:60px}
+.hero-eyebrow{font-size:11px;font-weight:500;letter-spacing:0.26em;text-transform:uppercase;color:var(--gold-pale);margin-bottom:22px;display:flex;align-items:center;gap:14px;opacity:0;animation:up 0.7s ease 0.2s forwards}
+.hero-eyebrow::after{content:'';width:32px;height:1px;background:var(--gold-pale);display:block}
+h1.hero-h1{font-family:var(--serif);font-size:clamp(68px,9.5vw,124px);line-height:0.95;letter-spacing:-0.025em;color:#fff;font-weight:700;opacity:0;animation:up 0.9s ease 0.3s forwards}
+h1.hero-h1 em{font-style:italic;font-weight:400;color:rgba(255,255,255,0.58)}
+.hero-aside{text-align:right;opacity:0;animation:up 0.8s ease 0.55s forwards;max-width:240px}
+.hero-aside p{font-size:14px;font-weight:400;color:rgba(255,255,255,0.5);line-height:1.9;margin-bottom:24px}
+.btn-w{font-size:11px;font-weight:600;letter-spacing:0.13em;text-transform:uppercase;border:1.5px solid rgba(255,255,255,0.45);color:#fff;padding:13px 28px;text-decoration:none;display:inline-block;position:relative;overflow:hidden;transition:border-color 0.2s}
+.btn-w:hover{border-color:#fff}
+.btn-w::after,.nav-cta::after,.btn-gold::after{content:'';position:absolute;top:0;left:-100%;width:60%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.18),transparent);transform:skewX(-20deg);transition:left 0.55s ease}
+.btn-w:hover::after,.nav-cta:hover::after,.btn-gold:hover::after{left:140%}
+
+/* STRIP */
+.strip{background:var(--navy);display:flex;padding:0 60px;border-bottom:1px solid rgba(255,255,255,0.07)}
+.strip-item{flex:1;padding:20px 0;display:flex;align-items:center;gap:12px;border-right:1px solid rgba(255,255,255,0.07)}
+.strip-item:last-child{border-right:none}
+.strip-item span{font-size:11px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.4)}
+.strip-item svg{flex-shrink:0;opacity:0.5}
+
+/* ABOUT */
+.about-section{display:grid;grid-template-columns:1fr 1fr;max-width:1320px;margin:0 auto;padding:130px 60px;gap:110px;align-items:center}
+.sec-label{font-size:11px;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:20px}
+.sec-h2{font-family:var(--serif);font-size:clamp(52px,5.5vw,80px);line-height:1.0;letter-spacing:-0.02em;color:var(--navy);font-weight:700;margin-bottom:28px}
+.sec-h2 em{font-style:italic;font-weight:600}
+.body-text{font-size:16px;font-weight:400;color:var(--ink2);line-height:1.9;margin-bottom:16px}
+.text-link{font-size:12px;font-weight:600;letter-spacing:0.13em;text-transform:uppercase;color:var(--navy);text-decoration:none;display:inline-flex;align-items:center;gap:10px;margin-top:20px;border-bottom:1.5px solid var(--navy);padding-bottom:4px;transition:gap 0.2s}
+.text-link:hover{gap:16px}
+
+/* ABOUT PHOTO GRID */
+.about-photos{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:300px 260px;gap:10px}
+.about-photos .ap1{grid-column:1/3;overflow:hidden}
+.about-photos .ap2{overflow:hidden}
+.about-photos .ap3{overflow:hidden}
+.about-photos img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.6s ease}
+.about-photos div:hover img{transform:scale(1.04)}
+
+/* SERVICES */
+.services-section{background:var(--off);padding:130px 60px}
+.services-head{max-width:1320px;margin:0 auto 64px}
+.svc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);max-width:1320px;margin:0 auto}
+.svc{background:var(--white);position:relative;transition:background 0.3s;cursor:default;overflow:hidden}
+.svc-bar{position:absolute;top:0;left:0;right:0;height:2.5px;background:var(--navy);transform:scaleX(0);transform-origin:left;transition:transform 0.4s;z-index:1}
+.svc:hover{background:var(--navy)}
+.svc:hover .svc-bar{transform:scaleX(1)}
+.svc-photo{height:200px;overflow:hidden}
+.svc-photo img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.6s ease}
+.svc:hover .svc-photo img{transform:scale(1.05)}
+.svc-body{padding:32px 36px 42px}
+.svc-num{font-family:var(--serif);font-size:13px;color:var(--ink3);letter-spacing:0.1em;margin-bottom:14px;transition:color 0.3s}
+.svc:hover .svc-num{color:rgba(255,255,255,0.3)}
+.svc-name{font-family:var(--serif);font-size:28px;font-weight:700;color:var(--navy);line-height:1.1;margin-bottom:14px;transition:color 0.3s}
+.svc:hover .svc-name{color:#fff}
+.svc-desc{font-size:14px;font-weight:400;color:var(--ink2);line-height:1.8;transition:color 0.3s}
+.svc:hover .svc-desc{color:rgba(255,255,255,0.5)}
+
+/* PHOTO BREAK */
+.photo-break{height:540px;position:relative;overflow:hidden}
+.photo-break img{width:100%;height:100%;object-fit:cover;object-position:center 35%;will-change:transform}
+.photo-break-overlay{position:absolute;inset:0;background:rgba(21,34,68,0.46);display:flex;align-items:center;justify-content:center}
+.photo-break-quote{text-align:center;color:#fff;max-width:700px;padding:0 40px}
+.photo-break-quote span{font-size:11px;font-weight:500;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold-pale);display:block;margin-bottom:18px}
+.photo-break-quote h2{font-family:var(--serif);font-size:clamp(42px,5vw,68px);font-weight:400;font-style:italic;line-height:1.1}
+
+/* COUNTER */
+.counter-section{position:relative;overflow:hidden;min-height:520px;display:flex;align-items:center;justify-content:center}
+.counter-video-bg{position:absolute;inset:0;z-index:0}
+.counter-video-bg video{width:100%;height:100%;object-fit:cover}
+.counter-overlay{position:absolute;inset:0;z-index:1;background:rgba(14,22,44,0.78)}
+.counter-content{position:relative;z-index:2;text-align:center;padding:100px 60px;width:100%}
+.counter-grid{display:grid;grid-template-columns:repeat(3,1fr);max-width:900px;margin:0 auto;gap:1px;background:rgba(255,255,255,0.08)}
+.counter-item{padding:60px 40px;text-align:center}
+.counter-num{font-family:var(--serif);font-size:clamp(72px,9vw,120px);font-weight:700;color:#fff;line-height:1;letter-spacing:-0.03em;display:block;margin-bottom:12px}
+.counter-num .suffix{font-size:0.45em;font-weight:400;font-style:italic;color:var(--gold-pale)}
+.counter-label{font-size:11px;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.38)}
+
+/* REVIEWS */
+.reviews-section{background:var(--off);padding:100px 0;overflow:hidden}
+.reviews-head{padding:0 60px;margin-bottom:52px;display:flex;justify-content:space-between;align-items:flex-end}
+.reviews-head h2{font-family:var(--serif);font-size:clamp(44px,4.5vw,64px);font-weight:700;color:var(--navy);line-height:1.05;letter-spacing:-0.02em}
+.reviews-head h2 em{font-style:italic;font-weight:400}
+.reviews-head p{font-size:13px;color:var(--ink3);letter-spacing:0.1em;text-transform:uppercase;padding-bottom:8px}
+.marquee-outer{overflow:hidden;position:relative}
+.marquee-outer::before,.marquee-outer::after{content:'';position:absolute;top:0;bottom:0;width:140px;z-index:2;pointer-events:none}
+.marquee-outer::before{left:0;background:linear-gradient(to right,var(--off) 30%,transparent)}
+.marquee-outer::after{right:0;background:linear-gradient(to left,var(--off) 30%,transparent)}
+.marquee-track{display:flex;gap:18px;width:max-content;animation:marquee-scroll 32s linear infinite}
+.marquee-track:hover{animation-play-state:paused}
+.rev-card{flex-shrink:0;width:380px;background:var(--white);padding:38px 38px 34px;border:1px solid var(--border);position:relative}
+.rev-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform 0.4s}
+.rev-card:hover::before{transform:scaleX(1)}
+.rev-stars{color:var(--gold);font-size:13px;letter-spacing:4px;margin-bottom:20px;display:block}
+.rev-text{font-family:var(--serif);font-size:22px;font-weight:600;font-style:italic;color:var(--navy);line-height:1.5;margin-bottom:26px}
+.rev-author{display:flex;align-items:center;gap:14px}
+.rev-avatar{width:46px;height:46px;border-radius:50%;overflow:hidden;flex-shrink:0;border:2px solid var(--border)}
+.rev-avatar img{width:100%;height:100%;object-fit:cover;display:block}
+.rev-author strong{font-size:13px;font-weight:700;color:var(--ink);display:block;margin-bottom:2px}
+.rev-author span{font-size:11px;color:var(--ink3);letter-spacing:0.09em;text-transform:uppercase}
+@keyframes marquee-scroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+
+/* CTA */
+.cta-section{background:var(--navy);padding:0}
+.cta-grid{display:grid;grid-template-columns:1fr 1fr}
+.cta-photo{overflow:hidden;position:relative;min-height:580px}
+.cta-photo img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0}
+.cta-photo-tint{position:absolute;inset:0;background:rgba(21,34,68,0.25)}
+.cta-body{padding:90px 72px;display:flex;flex-direction:column;justify-content:center}
+.cta-h{font-family:var(--serif);font-size:clamp(46px,5vw,68px);font-weight:700;color:#fff;line-height:1.02;margin-bottom:22px}
+.cta-h em{font-style:italic;font-weight:400;color:var(--gold-pale)}
+.cta-p{font-size:16px;font-weight:400;color:rgba(255,255,255,0.48);line-height:1.9;margin-bottom:40px;max-width:380px}
+.cta-btns{display:flex;gap:14px;flex-wrap:wrap}
+.btn-gold{font-size:11px;font-weight:600;letter-spacing:0.13em;text-transform:uppercase;background:var(--gold);color:#fff;padding:15px 34px;text-decoration:none;display:inline-block;position:relative;overflow:hidden;transition:background 0.2s}
+.btn-gold:hover{background:var(--gold-pale)}
+.btn-ghost{font-size:11px;font-weight:500;letter-spacing:0.13em;text-transform:uppercase;background:transparent;color:rgba(255,255,255,0.6);border:1.5px solid rgba(255,255,255,0.25);padding:15px 34px;text-decoration:none;display:inline-block;transition:border-color 0.2s,color 0.2s}
+.btn-ghost:hover{border-color:rgba(255,255,255,0.65);color:#fff}
+.cta-note{font-size:11px;color:rgba(255,255,255,0.22);margin-top:18px;letter-spacing:0.07em}
+
+/* FOOTER */
+footer{background:#0C1830;padding:80px 60px 36px}
+.ft{display:grid;grid-template-columns:1.8fr 1fr 1fr;gap:72px;margin-bottom:64px;align-items:start}
+.ft-logo{display:flex;align-items:center;gap:13px;margin-bottom:16px;text-decoration:none}
+.ft-logo img{width:42px;height:42px;object-fit:contain;filter:brightness(0) invert(1);opacity:0.7}
+.ft-brand{font-family:var(--serif);font-size:22px;font-weight:600;color:#fff}
+.ft-tag{font-size:14px;color:rgba(255,255,255,0.3);line-height:1.85;max-width:270px;font-weight:300;margin-bottom:28px}
+.ft-social a{display:inline-flex;align-items:center;gap:9px;font-size:11px;font-weight:500;letter-spacing:0.11em;text-transform:uppercase;color:rgba(255,255,255,0.38);text-decoration:none;border:1px solid rgba(255,255,255,0.1);padding:10px 18px;transition:all 0.2s}
+.ft-social a:hover{color:#fff;border-color:rgba(255,255,255,0.35)}
+.ft-col-title{font-size:10px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.18);margin-bottom:18px}
+.ft-links{list-style:none;display:flex;flex-direction:column;gap:11px}
+.ft-links a{font-size:14px;color:rgba(255,255,255,0.38);text-decoration:none;font-weight:300;transition:color 0.2s}
+.ft-links a:hover{color:#fff}
+.ft-bottom{border-top:1px solid rgba(255,255,255,0.06);padding-top:28px;display:flex;justify-content:space-between;font-size:12px;color:rgba(255,255,255,0.18);letter-spacing:0.05em}
+
+/* REVEAL & EFFECTS */
+.reveal{opacity:0;transform:translateY(22px);transition:opacity 0.75s ease,transform 0.75s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+@keyframes up{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+
+/* MOBILE */
+@media(max-width:960px){
+  nav,nav.scrolled{padding:14px 24px}
+  .nav-links{display:none}
+  .hero-content{padding:0 24px 60px;grid-template-columns:1fr}
+  .hero-aside{text-align:left;max-width:100%}
+  .strip{padding:0 24px;flex-wrap:wrap}
+  .strip-item{flex:1 0 40%;padding:14px 0}
+  .about-section{grid-template-columns:1fr;gap:52px;padding:80px 24px}
+  .about-photos{grid-template-rows:240px 200px}
+  .services-section{padding:80px 24px}
+  .svc-grid{grid-template-columns:1fr 1fr}
+  .photo-break{height:340px}
+  .reviews-section{padding:80px 0}
+  .reviews-head{padding:0 24px;flex-direction:column;align-items:flex-start;gap:12px}
+  .cta-grid{grid-template-columns:1fr}
+  .cta-photo{min-height:280px;position:relative}
+  .cta-body{padding:60px 24px}
+  footer{padding:60px 24px 32px}
+  .ft{grid-template-columns:1fr;gap:36px}
+  .ft-bottom{flex-direction:column;gap:8px}
+}
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <a class="nav-logo" href="#">
+    <img src="stormemoveslogo.jpg" alt="Storme Moves logo">
+    <div class="logo-text">
+      <span class="logo-name">Storme Moves</span>
+      <span class="logo-sub">Art & Furniture Moving</span>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a class="nav-cta" href="#contact">Free Consultation</a>
+</nav>
+
+<section class="hero">
+  <div class="hero-img">
+    <img class="parallax-img" src="https://images.unsplash.com/photo-1631679706909-1844bbd07221?w=1800&q=85&auto=format&fit=crop" alt="Art in luxury home">
+  </div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div>
+      <div class="hero-eyebrow">Brisbane's Premium Movers</div>
+      <h1 class="hero-h1"><em>Elevated</em><br>care for<br>exceptional<br>spaces.</h1>
+    </div>
+    <div class="hero-aside">
+      <p>Premium art & furniture relocation. Care-first handling. Fully insured. By appointment only.</p>
+      <a href="#contact" class="btn-w">Book a Consultation</a>
+    </div>
+  </div>
+</section>
+
+<div class="strip">
+  <div class="strip-item">
+    <svg width="14" height="14" fill="none" stroke="#C9973A" stroke-width="1.4" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+    <span>Fully Insured</span>
+  </div>
+  <div class="strip-item">
+    <svg width="14" height="14" fill="none" stroke="#C9973A" stroke-width="1.4" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+    <span>By Appointment</span>
+  </div>
+  <div class="strip-item">
+    <svg width="14" height="14" fill="none" stroke="#C9973A" stroke-width="1.4" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+    <span>Brisbane Based</span>
+  </div>
+  <div class="strip-item">
+    <svg width="14" height="14" fill="none" stroke="#C9973A" stroke-width="1.4" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+    <span>5-Star Rated</span>
+  </div>
+</div>
+
+<section id="about">
+  <div class="about-section">
+    <div>
+      <p class="sec-label reveal">Who We Are</p>
+      <h2 class="sec-h2 reveal" style="transition-delay:0.08s">Not your<br>average<br>removalist.</h2>
+      <p class="body-text reveal" style="transition-delay:0.14s">Storme Moves was built for people who care deeply about their belongings — original art, designer furniture, and luxury interiors. We handle everything with the precision and respect you'd expect from a specialist.</p>
+      <p class="body-text reveal" style="transition-delay:0.18s">Based in Brisbane. By appointment. Every job personally managed.</p>
+      <a href="#contact" class="text-link reveal" style="transition-delay:0.22s">Book your free consultation →</a>
+    </div>
+    <div class="about-photos reveal" style="transition-delay:0.16s">
+      <div class="ap1"><img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=1200&q=85&auto=format&fit=crop" alt="Luxury interior"></div>
+      <div class="ap2"><img src="https://images.unsplash.com/photo-1615529182904-14819c35db37?w=700&q=85&auto=format&fit=crop&crop=left" alt="Premium interior"></div>
+      <div class="ap3"><img src="https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?w=700&q=85&auto=format&fit=crop" alt="Interior art"></div>
+    </div>
+  </div>
+</section>
+
+<section class="services-section" id="services">
+  <div class="services-head">
+    <p class="sec-label reveal">What We Do</p>
+    <h2 class="sec-h2 reveal" style="transition-delay:0.08s">Specialist<br>services for<br><em>exceptional spaces.</em></h2>
+  </div>
+  <div class="svc-grid">
+    <div class="svc reveal">
+      <div class="svc-bar"></div>
+      <div class="svc-photo"><img src="https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?w=600&q=80&auto=format&fit=crop" alt="Art relocation"></div>
+      <div class="svc-body">
+        <div class="svc-num">01</div>
+        <h3 class="svc-name">Art<br>Relocation</h3>
+        <p class="svc-desc">Original artwork, sculptures, and framed pieces moved with museum-grade care and precise placement.</p>
+      </div>
+    </div>
+    <div class="svc reveal" style="transition-delay:0.08s">
+      <div class="svc-bar"></div>
+      <div class="svc-photo"><img src="https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?w=600&q=80&auto=format&fit=crop" alt="Luxury furniture"></div>
+      <div class="svc-body">
+        <div class="svc-num">02</div>
+        <h3 class="svc-name">Luxury Furniture<br>Moving</h3>
+        <p class="svc-desc">Designer and antique pieces transported with full protection. Arrives exactly as it left — guaranteed.</p>
+      </div>
+    </div>
+    <div class="svc reveal" style="transition-delay:0.16s">
+      <div class="svc-bar"></div>
+      <div class="svc-photo"><img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=600&q=80&auto=format&fit=crop" alt="Placement and styling"></div>
+      <div class="svc-body">
+        <div class="svc-num">03</div>
+        <h3 class="svc-name">Placement<br>& Styling</h3>
+        <p class="svc-desc">We don't just deliver — we place. Items positioned to your vision, assembled if needed, space styled on arrival.</p>
+      </div>
+    </div>
+    <div class="svc reveal" style="transition-delay:0.24s">
+      <div class="svc-bar"></div>
+      <div class="svc-photo"><img src="https://images.unsplash.com/photo-1513519245088-0e12902e5a38?w=600&q=80&auto=format&fit=crop" alt="Executive moves"></div>
+      <div class="svc-body">
+        <div class="svc-num">04</div>
+        <h3 class="svc-name">Executive<br>Office Moves</h3>
+        <p class="svc-desc">High-end office relocations handled discreetly and efficiently. Minimal disruption, maximum professionalism.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="photo-break">
+  <img class="parallax-img" src="https://images.unsplash.com/photo-1600121848594-d8644e57abab?w=1800&q=85&auto=format&fit=crop" alt="Luxury room with art">
+  <div class="photo-break-overlay">
+    <div class="photo-break-quote reveal">
+      <span>Brisbane & Surrounds</span>
+      <h2>"Your pieces deserve better than ordinary."</h2>
+    </div>
+  </div>
+</div>
+
+<section class="counter-section">
+  <div class="counter-video-bg">
+    <video autoplay muted loop playsinline>
+      <source src="IMG_8788.MOV" type="video/quicktime">
+    </video>
+  </div>
+  <div class="counter-overlay"></div>
+  <div class="counter-content">
+    <div class="counter-grid">
+      <div class="counter-item">
+        <span class="counter-num" data-target="418" data-suffix="" data-duration="10000">0</span>
+        <span class="counter-label">Jobs Completed</span>
+      </div>
+      <div class="counter-item">
+        <span class="counter-num" data-target="100" data-suffix="%">0</span>
+        <span class="counter-label">Satisfaction Rate</span>
+      </div>
+      <div class="counter-item">
+        <span class="counter-num" data-target="0" data-suffix="">0</span>
+        <span class="counter-label">Items Damaged</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="reviews-section">
+  <div class="reviews-head reveal">
+    <div>
+      <p class="sec-label">What Clients Say</p>
+      <h2>Trusted by Brisbane's<br><em>most discerning.</em></h2>
+    </div>
+    <p>5.0 &nbsp;★★★★★&nbsp; across all reviews</p>
+  </div>
+  <div class="marquee-outer">
+    <div class="marquee-track">
+      <div class="rev-card"><span class="rev-stars">★★★★★</span><p class="rev-text">"Friendly guy who did the job well."</p><div class="rev-author"><div><strong>Lenai D.</strong><span>Removalist Job</span></div></div></div>
+      <div class="rev-card"><span class="rev-stars">★★★★★</span><p class="rev-text">"Was so happy with the Stormie & George. They were super helpful and flexible. Great communication and really lovely guys. Highly recommend!"</p><div class="rev-author"><div><strong>Kate D.</strong><span>Cart Boxes</span></div></div></div>
+      <div class="rev-card"><span class="rev-stars">★★★★★</span><p class="rev-text">"10/10 - Storme did a wonderful job moving all the heavy boxes into a storage room. Worked well and got the job done quicker than expected."</p><div class="rev-author"><div><strong>Chloe C.</strong><span>Heavy Boxes Storage Move</span></div></div></div>
+      <div class="rev-card"><span class="rev-stars">★★★★★</span><p class="rev-text">"A great couple off young men they were there when they said would be on time and efficient I would definitely recommend them."</p><div class="rev-author"><div><strong>Sonia T.</strong><span>Sofa to Apartment Move</span></div></div></div>
+      <div class="rev-card"><span class="rev-stars">★★★★★</span><p class="rev-text">"Storme did an awesome job moving 3 big heavy pieces of furniture up a long flight of stairs. Communication and punctuality was spot on. Highly recommend."</p><div class="rev-author"><div><strong>Kelly M.</strong><span>Heavy Furniture Relocation</span></div></div></div>
+      <div class="rev-card"><span class="rev-stars">★★★★★</span><p class="rev-text">"Stormi was really easy to communicate with. He came on time and was very polite. He handled our couches with care. I recommend his services. Thanks Stormi!!"</p><div class="rev-author"><div><strong>Halimah R.</strong><span>Sofa Moving Upstairs</span></div></div></div>
+      <div class="rev-card"><span class="rev-stars">★★★★★</span><p class="rev-text">"Excellent service by Storme. He gave the detail I needed in his offer to complete the task, communicated clearly, and completed the task promptly. I highly recommend Storme."</p><div class="rev-author"><div><strong>Christine J.</strong><span>Heavy Item Moving</span></div></div></div>
+      <div class="rev-card"><span class="rev-stars">★★★★★</span><p class="rev-text">"Fabulous job - on time, professional, helpful, moved super heavy cabinet, couldn't ask for more. Highly recommend. I will use you again - thanks so much Storme!"</p><div class="rev-author"><div><strong>Karen B.</strong><span>Kitchen Cabinet Relocation</span></div></div></div>
+      <div class="rev-card"><span class="rev-stars">★★★★★</span><p class="rev-text">"Stormi and his friend did a great job moving all our furnitures and boxes up into our house. Despite being hot day, they had a great attitude and were extremely careful with our items. Great work boys, thank you!"</p><div class="rev-author"><div><strong>Daars N.</strong><span>Furniture & Boxes Move</span></div></div></div>
+      <div class="rev-card"><span class="rev-stars">★★★★★</span><p class="rev-text">"Great tasker. On time, polite and can actually do the job. Assign him!!!!"</p><div class="rev-author"><div><strong>Andrew B.</strong><span>Professional Removalist</span></div></div></div>
+      <!-- duplicate for seamless loop -->
+      <div class="rev-card"><span class="rev-stars">★★★★★</span><p class="rev-text">"Friendly guy who did the job well."</p><div class="rev-author"><div><strong>Lenai D.</strong><span>Removalist Job</span></div></div></div>
+      <div class="rev-card"><span class="rev-stars">★★★★★</span><p class="rev-text">"Was so happy with the Stormie & George. They were super helpful and flexible. Great communication and really lovely guys. Highly recommend!"</p><div class="rev-author"><div><strong>Kate D.</strong><span>Cart Boxes</span></div></div></div>
+      <div class="rev-card"><span class="rev-stars">★★★★★</span><p class="rev-text">"10/10 - Storme did a wonderful job moving all the heavy boxes into a storage room. Worked well and got the job done quicker than expected."</p><div class="rev-author"><div><strong>Chloe C.</strong><span>Heavy Boxes Storage Move</span></div></div></div>
+      <div class="rev-card"><span class="rev-stars">★★★★★</span><p class="rev-text">"A great couple off young men they were there when they said would be on time and efficient I would definitely recommend them."</p><div class="rev-author"><div><strong>Sonia T.</strong><span>Sofa to Apartment Move</span></div></div></div>
+      <div class="rev-card"><span class="rev-stars">★★★★★</span><p class="rev-text">"Storme did an awesome job moving 3 big heavy pieces of furniture up a long flight of stairs. Communication and punctuality was spot on. Highly recommend."</p><div class="rev-author"><div><strong>Kelly M.</strong><span>Heavy Furniture Relocation</span></div></div></div>
+      <div class="rev-card"><span class="rev-stars">★★★★★</span><p class="rev-text">"Stormi was really easy to communicate with. He came on time and was very polite. He handled our couches with care. I recommend his services. Thanks Stormi!!"</p><div class="rev-author"><div><strong>Halimah R.</strong><span>Sofa Moving Upstairs</span></div></div></div>
+      <div class="rev-card"><span class="rev-stars">★★★★★</span><p class="rev-text">"Excellent service by Storme. He gave the detail I needed in his offer to complete the task, communicated clearly, and completed the task promptly. I highly recommend Storme."</p><div class="rev-author"><div><strong>Christine J.</strong><span>Heavy Item Moving</span></div></div></div>
+      <div class="rev-card"><span class="rev-stars">★★★★★</span><p class="rev-text">"Fabulous job - on time, professional, helpful, moved super heavy cabinet, couldn't ask for more. Highly recommend. I will use you again - thanks so much Storme!"</p><div class="rev-author"><div><strong>Karen B.</strong><span>Kitchen Cabinet Relocation</span></div></div></div>
+      <div class="rev-card"><span class="rev-stars">★★★★★</span><p class="rev-text">"Stormi and his friend did a great job moving all our furnitures and boxes up into our house. Despite being hot day, they had a great attitude and were extremely careful with our items. Great work boys, thank you!"</p><div class="rev-author"><div><strong>Daars N.</strong><span>Furniture & Boxes Move</span></div></div></div>
+      <div class="rev-card"><span class="rev-stars">★★★★★</span><p class="rev-text">"Great tasker. On time, polite and can actually do the job. Assign him!!!!"</p><div class="rev-author"><div><strong>Andrew B.</strong><span>Professional Removalist</span></div></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section" id="contact">
+  <div class="cta-grid">
+    <div class="cta-photo">
+      <img src="https://images.unsplash.com/photo-1560185127-6ed189bf02f4?w=1000&q=85&auto=format&fit=crop" alt="Elegant space">
+      <div class="cta-photo-tint"></div>
+    </div>
+    <div class="cta-body reveal">
+      <h2 class="cta-h">Ready for a<br>move done<br><em>properly?</em></h2>
+      <p class="cta-p">Your first consultation is completely free. We come to you, assess your pieces and space, and build an honest plan — no pressure.</p>
+      <div class="cta-btns">
+        <a href="mailto:info@stormemoves.com.au" class="btn-gold">Send an Enquiry</a>
+        <a href="https://www.instagram.com/stormemoves" target="_blank" class="btn-ghost">View Our Work</a>
+      </div>
+      <p class="cta-note">Brisbane & surrounds &nbsp;·&nbsp; By appointment &nbsp;·&nbsp; Fully insured</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="ft">
+    <div>
+      <a class="ft-logo" href="#">
+        <img src="stormemoveslogo.jpg" alt="Storme Moves">
+        <span class="ft-brand">Storme Moves</span>
+      </a>
+      <p class="ft-tag">Premium art & furniture relocation for Brisbane homes and spaces that deserve exceptional care. Insured. By appointment.</p>
+      <div class="ft-social">
+        <a href="https://www.instagram.com/stormemoves" target="_blank">
+          <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.4" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          @stormemoves
+        </a>
+      </div>
+    </div>
+    <div>
+      <div class="ft-col-title">Services</div>
+      <ul class="ft-links">
+        <li><a href="#services">Art Relocation</a></li>
+        <li><a href="#services">Furniture Moving</a></li>
+        <li><a href="#services">Placement & Styling</a></li>
+        <li><a href="#services">Executive Moves</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="ft-col-title">Get in Touch</div>
+      <ul class="ft-links">
+        <li><a href="mailto:info@stormemoves.com.au">info@stormemoves.com.au</a></li>
+        <li><a href="https://www.instagram.com/stormemoves" target="_blank">@stormemoves</a></li>
+        <li><a href="#contact">Free Consultation</a></li>
+        <li><a href="#">Brisbane, QLD</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="ft-bottom">
+    <span>© 2025 Storme Moves. All rights reserved.</span>
+    <span>Brisbane, QLD &nbsp;·&nbsp; Fully Insured &nbsp;·&nbsp; By Appointment</span>
+  </div>
+</footer>
+
+<script>
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>80),{passive:true});
+
+const io=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('visible');io.unobserve(x.target)}}),{threshold:0.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+const pEls=document.querySelectorAll('.parallax-img');
+function doParallax(){pEls.forEach(el=>{const r=el.closest('section,div').getBoundingClientRect();const p=(innerHeight/2-r.top-r.height/2)/innerHeight;el.style.transform=`translateY(${p*60}px) scale(1.08)`})}
+window.addEventListener('scroll',doParallax,{passive:true});doParallax();
+
+function easeLinear(t){return t}
+function easeOutCubic(t){return 1-Math.pow(1-t,3)}
+function animateCounter(el){
+  const target=+el.dataset.target,suffix=el.dataset.suffix||'',dur=+(el.dataset.duration||2200);
+  if(target===0){el.innerHTML='0<span class="suffix">'+suffix+'</span>';return}
+  const ease=dur>5000?easeLinear:easeOutCubic,start=performance.now();
+  (function frame(now){const t=Math.min((now-start)/dur,1);el.innerHTML=Math.round(ease(t)*target)+'<span class="suffix">'+suffix+'</span>';if(t<1)requestAnimationFrame(frame)})(performance.now());
+}
+const cio=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.querySelectorAll('.counter-num').forEach(animateCounter);cio.unobserve(x.target)}}),{threshold:0.3});
+document.querySelectorAll('.counter-section').forEach(s=>cio.observe(s));
+</script>
+</body>
+</html>
+
