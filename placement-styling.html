@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-WF3JZTCR');</script>
+<!-- End Google Tag Manager -->
+
+<!-- Google tag (gtag.js) — GA4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-HX2RX5F4T6"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-HX2RX5F4T6');
+</script>
+<!-- End GA4 -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --navy:#152244;--navy-mid:#1C2E58;--gold:#B8922E;--gold-pale:#D4B06A;
+  --white:#FFFFFF;--off:#F7F6F3;--off2:#EFEDE8;
+  --ink:#1A1816;--ink2:#5C5956;--ink3:#9A9794;--border:#E4E1DC;
+  --serif:'Cormorant Garamond',serif;--sans:'Inter',sans-serif;
+}
+html{scroll-behavior:smooth}
+body{background:var(--white);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.65;overflow-x:hidden}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:22px 60px;display:flex;justify-content:space-between;align-items:center;transition:all 0.4s}
+nav.scrolled{background:var(--navy);padding:14px 60px}
+.nav-logo{text-decoration:none;display:flex;align-items:center;gap:13px}
+.nav-logo img{width:44px;height:44px;object-fit:contain}
+.logo-text{display:flex;flex-direction:column;line-height:1}
+.logo-name{font-family:var(--serif);font-size:21px;font-weight:600;color:#fff;letter-spacing:0.03em}
+.logo-sub{font-size:8px;font-weight:400;letter-spacing:0.22em;text-transform:uppercase;color:rgba(255,255,255,0.42);margin-top:4px}
+.nav-links{display:flex;gap:36px;list-style:none}
+.nav-links a{font-size:12px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.6);text-decoration:none;transition:color 0.2s}
+.nav-links a:hover{color:#fff}
+.nav-cta{font-size:11px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;border:1.5px solid rgba(255,255,255,0.45);color:#fff;padding:11px 26px;text-decoration:none;position:relative;overflow:hidden;transition:background 0.2s}
+.nav-cta:hover{background:rgba(255,255,255,0.1)}
+.nav-right{display:flex;align-items:center;gap:14px}
+.nav-phone{display:flex;align-items:center;justify-content:center;width:38px;height:38px;flex-shrink:0;border:1.5px solid rgba(255,255,255,0.45);color:#fff;text-decoration:none;transition:background 0.2s,border-color 0.2s}
+.nav-phone:hover{background:rgba(255,255,255,0.1);border-color:#fff}
+
+/* HERO */
+.hero{position:relative;height:100vh;min-height:660px;display:flex;align-items:flex-end;overflow:hidden}
+.hero-img{position:absolute;inset:0}
+.hero-img img{width:100%;height:100%;object-fit:cover;object-position:center 30%;will-change:transform}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(21,34,68,0.90) 0%,rgba(21,34,68,0.30) 60%,rgba(21,34,68,0.10) 100%)}
+.hero-content{position:relative;z-index:2;width:100%;padding:0 60px 90px;display:grid;grid-template-columns:1fr auto;align-items:flex-end;gap:60px}
+.hero-eyebrow{font-size:11px;font-weight:500;letter-spacing:0.26em;text-transform:uppercase;color:var(--gold-pale);margin-bottom:22px;display:flex;align-items:center;gap:14px;opacity:0;animation:up 0.7s ease 0.2s forwards}
+.hero-eyebrow::after{content:'';width:32px;height:1px;background:var(--gold-pale);display:block}
+h1.hero-h1{font-family:var(--serif);font-size:clamp(52px,7vw,92px);line-height:0.98;letter-spacing:-0.025em;color:#fff;font-weight:700;opacity:0;animation:up 0.9s ease 0.3s forwards}
+h1.hero-h1 em{font-style:italic;font-weight:400;color:rgba(255,255,255,0.58)}
+.hero-aside{text-align:right;opacity:0;animation:up 0.8s ease 0.55s forwards;max-width:240px}
+.hero-aside p{font-size:14px;font-weight:400;color:rgba(255,255,255,0.5);line-height:1.9;margin-bottom:24px}
+.btn-w{font-size:11px;font-weight:600;letter-spacing:0.13em;text-transform:uppercase;border:1.5px solid rgba(255,255,255,0.45);color:#fff;padding:13px 28px;text-decoration:none;display:inline-block;position:relative;overflow:hidden;transition:border-color 0.2s}
+.btn-w:hover{border-color:#fff}
+.btn-w::after,.nav-cta::after,.btn-gold::after{content:'';position:absolute;top:0;left:-100%;width:60%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.18),transparent);transform:skewX(-20deg);transition:left 0.55s ease}
+.btn-w:hover::after,.nav-cta:hover::after,.btn-gold:hover::after{left:140%}
+
+/* STRIP */
+.strip{background:var(--navy);display:flex;padding:0 60px;border-bottom:1px solid rgba(255,255,255,0.07)}
+.strip-item{flex:1;padding:20px 0;display:flex;align-items:center;gap:12px;border-right:1px solid rgba(255,255,255,0.07)}
+.strip-item:last-child{border-right:none}
+.strip-item span{font-size:11px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.4)}
+.strip-item svg{flex-shrink:0;opacity:0.5}
+
+/* ABOUT */
+.about-section{display:grid;grid-template-columns:1fr 1fr;max-width:1320px;margin:0 auto;padding:130px 60px;gap:110px;align-items:center}
+.sec-label{font-size:11px;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:20px}
+.sec-h2{font-family:var(--serif);font-size:clamp(52px,5.5vw,80px);line-height:1.0;letter-spacing:-0.02em;color:var(--navy);font-weight:700;margin-bottom:28px}
+.sec-h2 em{font-style:italic;font-weight:600}
+.body-text{font-size:16px;font-weight:400;color:var(--ink2);line-height:1.9;margin-bottom:16px}
+.text-link{font-size:12px;font-weight:600;letter-spacing:0.13em;text-transform:uppercase;color:var(--navy);text-decoration:none;display:inline-flex;align-items:center;gap:10px;margin-top:20px;border-bottom:1.5px solid var(--navy);padding-bottom:4px;transition:gap 0.2s}
+.text-link:hover{gap:16px}
+
+/* ABOUT PHOTO GRID */
+.about-photos{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:300px 260px;gap:10px}
+.about-photos .ap1{grid-column:1/3;overflow:hidden}
+.about-photos .ap2{overflow:hidden}
+.about-photos .ap3{overflow:hidden}
+.about-photos img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.6s ease}
+.about-photos div:hover img{transform:scale(1.04)}
+
+/* SERVICES */
+.services-section{background:var(--off);padding:130px 60px}
+.services-head{max-width:1320px;margin:0 auto 64px}
+.svc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);max-width:1320px;margin:0 auto}
+.svc{background:var(--white);position:relative;transition:background 0.3s;cursor:default;overflow:hidden}
+.svc-bar{position:absolute;top:0;left:0;right:0;height:2.5px;background:var(--navy);transform:scaleX(0);transform-origin:left;transition:transform 0.4s;z-index:1}
+.svc:hover{background:var(--navy)}
+.svc:hover .svc-bar{transform:scaleX(1)}
+.svc-photo{height:200px;overflow:hidden}
+.svc-photo img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.6s ease}
+.svc:hover .svc-photo img{transform:scale(1.05)}
+.svc-body{padding:32px 36px 42px}
+.svc-num{font-family:var(--serif);font-size:13px;color:var(--ink3);letter-spacing:0.1em;margin-bottom:14px;transition:color 0.3s}
+.svc:hover .svc-num{color:rgba(255,255,255,0.3)}
+.svc-name{font-family:var(--serif);font-size:28px;font-weight:700;color:var(--navy);line-height:1.1;margin-bottom:14px;transition:color 0.3s}
+.svc:hover .svc-name{color:#fff}
+.svc-desc{font-size:14px;font-weight:400;color:var(--ink2);line-height:1.8;transition:color 0.3s}
+.svc:hover .svc-desc{color:rgba(255,255,255,0.5)}
+
+
+/* COUNTER */
+.counter-section{position:relative;overflow:hidden;min-height:680px;display:flex;align-items:center;justify-content:center}
+.counter-video-bg{position:absolute;inset:0;z-index:0}
+.counter-video-bg video{width:100%;height:100%;object-fit:cover;display:block}
+.counter-overlay{position:absolute;inset:0;z-index:1;background:rgba(14,22,44,0.78)}
+.counter-content{position:relative;z-index:2;text-align:center;padding:100px 60px;width:100%}
+.video-quote{text-align:center;color:#fff;max-width:760px;margin:0 auto 64px}
+.video-quote span{font-size:11px;font-weight:500;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold-pale);display:block;margin-bottom:18px}
+.video-quote h2{font-family:var(--serif);font-size:clamp(38px,4.6vw,62px);font-weight:400;font-style:italic;line-height:1.12}
+.counter-grid{display:grid;grid-template-columns:repeat(3,1fr);max-width:900px;margin:0 auto;gap:1px;background:rgba(255,255,255,0.08)}
+.counter-item{padding:60px 40px;text-align:center}
+.counter-num{font-family:var(--serif);font-size:clamp(72px,9vw,120px);font-weight:700;color:#fff;line-height:1;letter-spacing:-0.03em;display:block;margin-bottom:12px}
+.counter-num .suffix{font-size:0.45em;font-weight:400;font-style:italic;color:var(--gold-pale)}
+.counter-label{font-size:11px;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.38)}
+
+/* REVIEWS */
+.reviews-section{background:var(--off);padding:100px 0;overflow:hidden}
+.reviews-head{padding:0 60px;margin-bottom:52px;display:flex;justify-content:space-between;align-items:flex-end}
+.reviews-head h2{font-family:var(--serif);font-size:clamp(44px,4.5vw,64px);font-weight:700;color:var(--navy);line-height:1.05;letter-spacing:-0.02em}
+.reviews-head h2 em{font-style:italic;font-weight:400}
+.reviews-head p{font-size:13px;color:var(--ink3);letter-spacing:0.1em;text-transform:uppercase;padding-bottom:8px}
+.reviews-head-right{display:flex;align-items:center;padding-bottom:6px}
+.rev-cta{font-size:12px;font-weight:600;letter-spacing:0.13em;text-transform:uppercase;color:var(--navy);text-decoration:none;border:1.5px solid var(--navy);padding:12px 24px;transition:all 0.2s;white-space:nowrap}
+.rev-cta:hover{background:var(--navy);color:#fff}
+.marquee-outer{overflow:hidden;position:relative}
+.marquee-outer::before,.marquee-outer::after{content:'';position:absolute;top:0;bottom:0;width:140px;z-index:2;pointer-events:none}
+.marquee-outer::before{left:0;background:linear-gradient(to right,var(--off) 30%,transparent)}
+.marquee-outer::after{right:0;background:linear-gradient(to left,var(--off) 30%,transparent)}
+.marquee-track{display:flex;gap:18px;width:max-content;animation:marquee-scroll 32s linear infinite}
+.marquee-track:hover{animation-play-state:paused}
+.rev-card{flex-shrink:0;width:380px;background:var(--white);padding:38px 38px 34px;border:1px solid var(--border);position:relative}
+.rev-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform 0.4s}
+.rev-card:hover::before{transform:scaleX(1)}
+.rev-stars{color:var(--gold);font-size:13px;letter-spacing:4px;margin-bottom:20px;display:block}
+.rev-text{font-family:var(--serif);font-size:22px;font-weight:600;font-style:italic;color:var(--navy);line-height:1.5;margin-bottom:26px}
+.rev-author{display:flex;align-items:center;gap:14px;justify-content:space-between}
+.rev-author-meta{display:flex;flex-direction:column}
+.rev-avatar{width:46px;height:46px;border-radius:50%;overflow:hidden;flex-shrink:0;border:2px solid var(--border);display:flex;align-items:center;justify-content:center;background:var(--navy);color:#fff;font-family:var(--serif);font-size:20px;font-weight:600}
+.rev-avatar img{width:100%;height:100%;object-fit:cover;display:block}
+.rev-author strong{font-size:13px;font-weight:700;color:var(--ink);display:block;margin-bottom:2px}
+.rev-author span{font-size:11px;color:var(--ink3);letter-spacing:0.09em;text-transform:uppercase}
+@keyframes marquee-scroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+/* CAROUSEL CONTROLS */
+.rev-controls{display:flex;justify-content:center;gap:14px;margin-top:46px}
+.rev-arrow{width:52px;height:52px;border:1.5px solid var(--border);background:var(--white);color:var(--navy);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all 0.25s}
+.rev-arrow:hover{background:var(--navy);color:#fff;border-color:var(--navy)}
+.rev-arrow svg{width:18px;height:18px}
+
+/* CTA */
+.cta-section{background:var(--navy);padding:0}
+.cta-grid{display:grid;grid-template-columns:1fr 1fr}
+.cta-photo{overflow:hidden;position:relative;min-height:580px}
+.cta-photo img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0}
+.cta-photo-tint{position:absolute;inset:0;background:rgba(21,34,68,0.25)}
+.cta-body{padding:90px 72px;display:flex;flex-direction:column;justify-content:center}
+.cta-h{font-family:var(--serif);font-size:clamp(46px,5vw,68px);font-weight:700;color:#fff;line-height:1.02;margin-bottom:22px}
+.cta-h em{font-style:italic;font-weight:400;color:var(--gold-pale)}
+.cta-p{font-size:16px;font-weight:400;color:rgba(255,255,255,0.48);line-height:1.9;margin-bottom:40px;max-width:380px}
+.cta-btns{display:flex;gap:14px;flex-wrap:wrap}
+.btn-gold{font-size:11px;font-weight:600;letter-spacing:0.13em;text-transform:uppercase;background:var(--gold);color:#fff;padding:15px 34px;text-decoration:none;display:inline-block;position:relative;overflow:hidden;transition:background 0.2s}
+.btn-gold:hover{background:var(--gold-pale)}
+.btn-ghost{font-size:11px;font-weight:500;letter-spacing:0.13em;text-transform:uppercase;background:transparent;color:rgba(255,255,255,0.6);border:1.5px solid rgba(255,255,255,0.25);padding:15px 34px;text-decoration:none;display:inline-block;transition:border-color 0.2s,color 0.2s}
+.btn-ghost:hover{border-color:rgba(255,255,255,0.65);color:#fff}
+.cta-note{font-size:11px;color:rgba(255,255,255,0.22);margin-top:18px;letter-spacing:0.07em}
+
+/* FOOTER */
+footer{background:#0C1830;padding:80px 60px 36px}
+.ft{display:grid;grid-template-columns:1.8fr 1fr 1fr;gap:72px;margin-bottom:64px;align-items:start}
+.ft-logo{display:flex;align-items:center;gap:13px;margin-bottom:16px;text-decoration:none}
+.ft-logo img{width:42px;height:42px;object-fit:contain}
+.ft-brand{font-family:var(--serif);font-size:22px;font-weight:600;color:#fff}
+.ft-tag{font-size:14px;color:rgba(255,255,255,0.3);line-height:1.85;max-width:270px;font-weight:300;margin-bottom:28px}
+.ft-social a{display:inline-flex;align-items:center;gap:9px;font-size:11px;font-weight:500;letter-spacing:0.11em;text-transform:uppercase;color:rgba(255,255,255,0.38);text-decoration:none;border:1px solid rgba(255,255,255,0.1);padding:10px 18px;transition:all 0.2s}
+.ft-social a:hover{color:#fff;border-color:rgba(255,255,255,0.35)}
+.ft-col-title{font-size:10px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.18);margin-bottom:18px}
+.ft-links{list-style:none;display:flex;flex-direction:column;gap:11px}
+.ft-links a{font-size:14px;color:rgba(255,255,255,0.38);text-decoration:none;font-weight:300;transition:color 0.2s}
+.ft-links a:hover{color:#fff}
+.ft-bottom{border-top:1px solid rgba(255,255,255,0.06);padding-top:28px;display:flex;justify-content:space-between;font-size:12px;color:rgba(255,255,255,0.18);letter-spacing:0.05em}
+
+/* REVEAL & EFFECTS */
+.reveal{opacity:0;transform:translateY(22px);transition:opacity 0.75s ease,transform 0.75s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+@keyframes up{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+
+/* MOBILE */
+@media(max-width:960px){
+  nav,nav.scrolled{padding:14px 24px}
+  .nav-links{display:none}
+  .hero-content{padding:0 24px 60px;grid-template-columns:1fr}
+  .hero-aside{text-align:left;max-width:100%}
+  .strip{padding:0 24px;flex-wrap:wrap}
+  .strip-item{flex:1 0 40%;padding:14px 0}
+  .about-section{grid-template-columns:1fr;gap:52px;padding:80px 24px}
+  .about-photos{grid-template-rows:240px 200px}
+  .services-section{padding:80px 24px}
+  .svc-grid{grid-template-columns:1fr 1fr}
+  .reviews-section{padding:80px 12px}
+  .reviews-head{padding:0 24px;flex-direction:column;align-items:flex-start;gap:12px}
+  .marquee-track{gap:12px}
+  .rev-card{width:280px;padding:28px 24px;font-size:15px}
+  .rev-text{font-size:18px;line-height:1.4}
+  .rev-author{gap:10px}
+  .marquee-outer::before{width:80px}
+  .marquee-outer::after{width:80px}
+  .counter-section{min-height:380px}
+  .counter-grid{grid-template-columns:1fr;gap:0}
+  .counter-item{padding:40px 24px}
+  .counter-num{font-size:clamp(48px,12vw,72px)}
+  .cta-grid{grid-template-columns:1fr}
+  .cta-photo{min-height:280px;position:relative}
+  .cta-body{padding:60px 24px}
+  footer{padding:60px 24px 32px}
+  .ft{grid-template-columns:1fr;gap:36px}
+  .ft-bottom{flex-direction:column;gap:8px}
+}
+
+/* MOBILE SMALL */
+@media(max-width:480px){
+  nav,nav.scrolled{padding:12px 16px}
+  .logo-sub{display:none}
+  .nav-right{gap:8px}
+  .nav-phone{width:34px;height:34px}
+  .nav-cta{padding:9px 14px;font-size:10px}
+  .rev-card{width:240px;font-size:14px}
+  .rev-text{font-size:16px}
+  .counter-item{padding:30px 16px}
+  .marquee-outer::before,.marquee-outer::after{width:60px}
+  .marquee-track{gap:10px}
+}
+</style>
+<title>Furniture Placement & Styling Brisbane | White-Glove | Storme Moves</title>
+<meta name="description" content="White-glove furniture placement and styling in Brisbane. We don't just deliver. We position, assemble and style your space exactly to your vision on arrival.">
+<link rel="canonical" href="https://stormemoves.com.au/placement-styling.html">
+
+<style>
+.sub-hero{position:relative;min-height:62vh;display:flex;align-items:flex-end;overflow:hidden}
+.sub-hero-img{position:absolute;inset:0}
+.sub-hero-img img{width:100%;height:100%;object-fit:cover}
+.sub-hero-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(21,34,68,0.92) 0%,rgba(21,34,68,0.45) 55%,rgba(21,34,68,0.25) 100%)}
+.sub-hero-content{position:relative;z-index:2;padding:0 60px 70px;max-width:1100px}
+.sub-eyebrow{font-size:11px;font-weight:500;letter-spacing:0.24em;text-transform:uppercase;color:var(--gold-pale);margin-bottom:18px;display:flex;align-items:center;gap:14px}
+.sub-eyebrow::after{content:'';width:32px;height:1px;background:var(--gold-pale);display:block}
+.sub-h1{font-family:var(--serif);font-size:clamp(44px,6vw,80px);line-height:1.0;letter-spacing:-0.02em;color:#fff;font-weight:700}
+.sub-h1 em{font-style:italic;font-weight:400;color:rgba(255,255,255,0.62)}
+.sub-intro{font-size:18px;color:rgba(255,255,255,0.62);max-width:560px;margin-top:24px;line-height:1.75}
+.sub-main{max-width:1100px;margin:0 auto;padding:110px 60px}
+.sub-lead{font-family:var(--serif);font-size:clamp(26px,3vw,38px);font-style:italic;color:var(--navy);line-height:1.4;margin-bottom:48px;font-weight:600}
+.sub-body p{font-size:17px;color:var(--ink2);line-height:1.9;margin-bottom:24px;max-width:760px}
+.sub-feature-title{font-family:var(--serif);font-size:32px;color:var(--navy);font-weight:700;margin:56px 0 28px}
+.sub-features{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);border:1px solid var(--border);margin-bottom:20px}
+.sub-feature{background:var(--white);padding:32px 34px}
+.sub-feature h4{font-family:var(--serif);font-size:21px;color:var(--navy);font-weight:700;margin-bottom:10px}
+.sub-feature p{font-size:15px;color:var(--ink2);line-height:1.8}
+.sub-cta-band{background:var(--navy);padding:84px 60px;text-align:center}
+.sub-cta-band h2{font-family:var(--serif);font-size:clamp(36px,4vw,56px);color:#fff;font-weight:700;margin-bottom:18px;line-height:1.05}
+.sub-cta-band h2 em{font-style:italic;font-weight:400;color:var(--gold-pale)}
+.sub-cta-band p{font-size:16px;color:rgba(255,255,255,0.5);max-width:520px;margin:0 auto 36px;line-height:1.8}
+.sub-related{background:var(--off);padding:90px 60px}
+.sub-related-head{max-width:1100px;margin:0 auto 36px}
+.sub-related-head p{font-size:11px;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:14px}
+.sub-related-head h3{font-family:var(--serif);font-size:38px;color:var(--navy);font-weight:700}
+.sub-related-grid{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.sub-related-card{background:var(--white);border:1px solid var(--border);padding:30px 30px 34px;text-decoration:none;display:block;transition:all 0.25s;position:relative;overflow:hidden}
+.sub-related-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2.5px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform 0.35s}
+.sub-related-card:hover{background:var(--navy)}
+.sub-related-card:hover::before{transform:scaleX(1)}
+.sub-related-card h4{font-family:var(--serif);font-size:22px;color:var(--navy);font-weight:700;margin-bottom:8px;transition:color 0.25s}
+.sub-related-card p{font-size:14px;color:var(--ink2);line-height:1.7;transition:color 0.25s}
+.sub-related-card:hover h4{color:#fff}
+.sub-related-card:hover p{color:rgba(255,255,255,0.5)}
+@media(max-width:960px){
+  .sub-hero-content{padding:0 24px 50px}
+  .sub-main{padding:70px 24px}
+  .sub-features{grid-template-columns:1fr}
+  .sub-cta-band{padding:60px 24px}
+  .sub-related{padding:60px 24px}
+  .sub-related-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WF3JZTCR"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<nav id="nav">
+  <a class="nav-logo" href="index.html">
+    <img src="stormemoveslogo.jpg" alt="Storme Moves logo">
+    <div class="logo-text">
+      <span class="logo-name">Storme Moves</span>
+      <span class="logo-sub">Art & Furniture Moving</span>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html#services">Services</a></li>
+    <li><a href="index.html#about">About</a></li>
+    <li><a href="index.html#contact">Contact</a></li>
+  </ul>
+  <div class="nav-right">
+    <a class="nav-phone" href="tel:+61475424300" aria-label="Call Storme Moves: +61 475 424 300">
+      <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.12.81.32 1.6.6 2.36a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.72-1.17a2 2 0 012.11-.45c.76.28 1.55.48 2.36.6A2 2 0 0122 16.92z"/></svg>
+    </a>
+    <a class="nav-cta" href="https://quote.stormemoves.com.au">Free Consultation</a>
+  </div>
+</nav>
+
+<section class="sub-hero">
+  <div class="sub-hero-img"><img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=1600&q=85&auto=format&fit=crop" alt="Placement & Styling Brisbane"></div>
+  <div class="sub-hero-overlay"></div>
+  <div class="sub-hero-content">
+    <div class="sub-eyebrow">Placement & Styling</div>
+    <h1 class="sub-h1">Placement<br>& <em>Styling</em></h1>
+    <p class="sub-intro">We don't just deliver. We place. Items positioned to your vision, assembled where needed, and your space finished on arrival.</p>
+  </div>
+</section>
+
+<div class="sub-main">
+  <p class="sub-lead">A move isn't finished when the truck is empty. It's finished when the room is right.</p>
+  <div class="sub-body"><p>Most moves end with everything dumped in the middle of the room. Storme Moves finishes the job properly. We position furniture, hang art, assemble what needs assembling, and style the space so it's ready to live in the moment we leave.</p><p>This is white-glove service in the truest sense. We work to your vision, or alongside your interior designer, placing each piece exactly where it belongs and adjusting until it's right.</p><p>It's the difference between a delivery and a finished home. For homeowners moving into a space that matters, and for designers staging for clients, it's the detail that sets the result apart.</p></div>
+  <h3 class="sub-feature-title">What's included</h3>
+  <div class="sub-features"><div class="sub-feature"><h4>Positioned to your vision</h4><p>Furniture and art placed exactly where you want it: measured, levelled, and adjusted until it's right.</p></div><div class="sub-feature"><h4>Assembly included</h4><p>Beds, shelving, and modular pieces assembled on site so the room is usable straight away.</p></div><div class="sub-feature"><h4>Designer-friendly</h4><p>We work alongside interior designers and stylists, executing the plan precisely.</p></div><div class="sub-feature"><h4>Finished, not just delivered</h4><p>We leave the space styled and ready, not full of boxes and leaning frames.</p></div></div>
+</div>
+
+<section class="sub-cta-band">
+  <h2>Want it <em>finished</em> properly?</h2>
+  <p>Tell us your vision. We'll place every piece exactly where it belongs.</p>
+  <a href="https://quote.stormemoves.com.au" class="btn-gold" onclick="return gtagSendEvent(this.href);">Get a Free Quote</a>
+</section>
+
+<section class="sub-related">
+  <div class="sub-related-head">
+    <p>More Specialist Services</p>
+    <h3>Explore what else we do</h3>
+  </div>
+  <div class="sub-related-grid"><a class="sub-related-card" href="art-relocation.html"><h4>Art Relocation</h4><p>Museum-grade handling for original artwork, sculpture and framed pieces.</p></a><a class="sub-related-card" href="luxury-furniture.html"><h4>Luxury Furniture Moving</h4><p>Designer and antique pieces transported with full white-glove protection.</p></a><a class="sub-related-card" href="executive-moves.html"><h4>Executive Office Moves</h4><p>Discreet, efficient high-end office relocations with minimal disruption.</p></a></div>
+</section>
+
+<footer>
+  <div class="ft">
+    <div>
+      <a class="ft-logo" href="index.html">
+        <img src="stormemoveslogo.jpg" alt="Storme Moves">
+        <span class="ft-brand">Storme Moves</span>
+      </a>
+      <p class="ft-tag">Premium art & furniture relocation for Brisbane homes and spaces that deserve exceptional care. Insured. By appointment.</p>
+      <div class="ft-social">
+        <a href="https://www.instagram.com/stormemoves" target="_blank">
+          <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.4" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          @stormemoves
+        </a>
+      </div>
+    </div>
+    <div>
+      <div class="ft-col-title">Services</div>
+      <ul class="ft-links">
+        <li><a href="art-relocation.html">Art Relocation</a></li>
+        <li><a href="luxury-furniture.html">Furniture Moving</a></li>
+        <li><a href="placement-styling.html">Placement & Styling</a></li>
+        <li><a href="executive-moves.html">Executive Moves</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="ft-col-title">Get in Touch</div>
+      <ul class="ft-links">
+        <li><a href="tel:+61475424300">+61 475 424 300</a></li>
+        <li><a href="mailto:info@stormemoves.com.au">info@stormemoves.com.au</a></li>
+        <li><a href="https://www.instagram.com/stormemoves" target="_blank">@stormemoves</a></li>
+        <li><a href="https://quote.stormemoves.com.au">Free Consultation</a></li>
+        <li><a href="https://g.page/r/CU1FkCOxTCwtEAE/review" target="_blank">Leave a Review</a></li>
+        <li><a href="#">Brisbane, QLD</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="ft-bottom">
+    <span>© 2025 Storme Moves. All rights reserved.</span>
+    <span>Brisbane, QLD &nbsp;·&nbsp; Fully Insured &nbsp;·&nbsp; By Appointment</span>
+  </div>
+</footer>
+
+<script>
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>80),{passive:true});
+function gtagSendEvent(url){var cb=function(){if(typeof url==='string'){window.location=url;}};if(typeof gtag==='function'){gtag('event','qualify_lead',{'event_callback':cb,'event_timeout':2000});}else{cb();}if(window.dataLayer){window.dataLayer.push({'event':'qualify_lead','lead_source':'enquiry_button'});}return false;}
+</script>
+
+</body>
+</html>
